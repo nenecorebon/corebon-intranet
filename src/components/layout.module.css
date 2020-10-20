@@ -1,0 +1,10 @@
+@import '../styles/variables.css';
+
+.main {
+  background-color: var(--cg-8);
+  padding-top: 0px;
+}
+
+.themeDark {
+  background-color: var(--offblack);
+}

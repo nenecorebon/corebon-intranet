@@ -1,0 +1,48 @@
+.container {
+  background-color: var(--offblack);
+  background-image: url(../assets/images/visuals/texture/Noise-78px.png);
+}
+
+.container h3 ~ div {
+  padding-top: 60px;
+  max-height: 600px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.contentContainer {
+  display: inline-block;
+  padding: 10px;
+}
+
+.offset {
+  top: -30px;
+  position: relative;
+  font-size: 24px;
+}
+
+.hr {
+  height: 1px;
+  width: 100%;
+  margin-bottom: 12px;
+  background-color: var(--cg-6);
+}
+
+.iconPadding {
+  padding-right: 10px;
+}
+
+.imageContainer {
+  overflow: hidden;
+  padding-top: 80px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.image {
+  width: 100%;
+}

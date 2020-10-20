@@ -1,0 +1,337 @@
+.card {
+  padding: 100px 0 160px;
+  position: relative;
+  overflow: hidden;
+  min-width: 250px;
+  min-height: 548px;
+  box-sizing: border-box;
+}
+
+.cardImageTop {
+  padding: 0;
+}
+
+.cardImageTopContainer {
+  height: 311px;
+  display: flex;
+  margin-bottom: 40px;
+}
+
+.card div > .cardImage {
+  width: 100%;
+  margin: auto;
+  height: 311px;
+  overflow: hidden;
+}
+
+.videoPlaceholderContainer {
+  position: relative;
+}
+
+.videoButton {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 70px;
+  width: 70px;
+  transform: translate(-50%, -50%);
+}
+
+.videoButton img {
+  width: 70px !important;
+  height: 70px !important;
+}
+
+.cardBody {
+  padding: 0 24px;
+}
+
+.linkButton {
+  height: 72px;
+  width: 72px;
+  font-size: 18px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border: none;
+  cursor: pointer;
+}
+
+.markdownContainer strong {
+  font-family: 'Termina';
+  font-size: 18px;
+  line-height: 1.56;
+  font-weight: 500;
+  letter-spacing: normal;
+  color: var(--cg-1);
+}
+
+.markdownContainer p {
+  font-family: 'Muli';
+  font-size: 18px;
+  line-height: 1.44;
+  font-weight: normal;
+  letter-spacing: -0.4px;
+  color: var(--cg-3);
+}
+
+.markdownContainer p > a {
+  padding-bottom: 60px;
+}
+
+.markdownContainer ol {
+  list-style: none;
+  counter-reset: custom-counter;
+  font-family: 'Muli';
+  font-size: 21px;
+  line-height: 1.33;
+  letter-spacing: -0.6px;
+  color: var(--cg-3);
+  padding-bottom: 40px;
+}
+
+.markdownContainer ol li {
+  counter-increment: custom-counter;
+}
+
+.markdownContainer ol li::before {
+  content: counter(custom-counter, decimal-leading-zero) '. ';
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 1.44;
+  letter-spacing: -0.4px;
+  color: var(--indigo-2);
+  width: 46px;
+  display: inline-block;
+}
+
+.blockThemeCorange {
+  background-color: var(--corange);
+}
+
+.blockThemeLight {
+  background-color: var(--white);
+}
+
+.blockThemeDark,
+.blockThemeBlack {
+  background-color: var(--cg-2);
+}
+
+/* If there's no max-width this means the picture also grows, and gets way to big */
+.blockThemeBlack {
+  align-self: start;
+}
+
+/* Content are supposed to vary more than other card layouts and therefore image shouldn't be fixed height */
+.blockThemeBlack .cardImageTopContainer,
+.blockThemeBlack div > .cardImage:first-child {
+  height: auto;
+  max-height: 500px;
+}
+
+/* Target all paragraphs, in spite of what's inside them */
+.blockThemeBlack .markdownContainer p:not(:last-child) {
+  padding-bottom: 24px;
+}
+
+.blockThemeBlack .cardBody {
+  padding-bottom: 32px;
+}
+
+/* Target all types of headings to make it less error prone, they should look the
+same either way it's set as a h2 in markdown or a h2 in title field of
+Contentful */
+.blockThemeLight h1,
+.blockThemeLight h2,
+.blockThemeLight h3,
+.blockThemeDark h1,
+.blockThemeDark h2,
+.blockThemeDark h3,
+.blockThemeBlack h1,
+.blockThemeBlack h2,
+.blockThemeBlack h2,
+.blockThemeCorange h1,
+.blockThemeCorange h2,
+.blockThemeCorange h3,
+.blockThemeCorangeLinkContent .title {
+  font-family: 'Muli', sans-serif;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: var(--cg-5);
+}
+
+.blockThemeCorange h1,
+.blockThemeCorange h2,
+.blockThemeCorange h3 {
+  color: var(--sand);
+}
+
+/* Add tiny extra padding between these headings and paragraphs, on other themes
+there simply are none */
+.blockThemeBlack h1,
+.blockThemeBlack h2 {
+  padding-bottom: 6px;
+}
+
+.blockThemeDark .markdownContainer strong,
+.blockThemeCorange .markdownContainer strong,
+.blockThemeBlack .markdownContainer strong {
+  color: var(--white);
+}
+
+.blockThemeLight .markdownContainer strong {
+  color: var(--cg-1);
+}
+
+.blockThemeCorange .markdownContainer p {
+  color: var(--sand);
+}
+
+.blockThemeDark .markdownContainer p {
+  color: var(--cg-6);
+}
+
+.blockThemeCorange p:first-child,
+.blockThemeLight p:first-child,
+.blockThemeDark p:first-child {
+  padding: 16px 0 24px 0;
+}
+
+.blockThemeCorange .linkButton {
+  background-color: var(--cg-1);
+  color: var(--corange);
+}
+
+.blockThemeLight .linkButton,
+.blockThemeDark .linkButton {
+  background-color: var(--corange);
+  color: var(--white);
+}
+
+/* All content of this theme should be white */
+.blockThemeAllWhiteLinkContent .title,
+.blockThemeAllWhiteLinkContent .markdownContainer p,
+.blockThemeAllWhiteLinkContent .markdownContainer strong,
+.blockThemeAllWhiteLinkContent a,
+.blockThemeAllWhiteLinkContent a::before {
+  color: var(--white);
+  border-color: var(--white);
+}
+
+/* Both p and strong are added just in case user forgetts to use the "correct" tag in markdown */
+.blockThemeAllWhiteLinkContent .title,
+.blockThemeAllWhiteLinkContent .markdownContainer p,
+.blockThemeAllWhiteLinkContent .markdownContainer strong,
+.blockThemeCorangeLinkContent .markdownContainer strong,
+.blockThemeCorangeLinkContent .markdownContainer p {
+  font-family: 'Termina', sans-serif;
+  font-size: 24px;
+  line-height: 1.17;
+  letter-spacing: -0.13px;
+}
+
+/* Both p and strong are added just in case user forgetts to use the "correct" tag in markdown */
+.blockThemeAllWhiteLinkContent .title,
+.blockThemeAllWhiteLinkContent .markdownContainer p,
+.blockThemeAllWhiteLinkContent .markdownContainer strong {
+  padding-bottom: 32px;
+  font-weight: 300;
+  max-width: 588px;
+}
+
+.blockThemeCorangeLinkContent .title {
+  color: var(--corange);
+  padding-bottom: 24px;
+}
+
+/* Both p and strong are added just in case user forgetts to use the "correct" tag in markdown */
+.blockThemeCorangeLinkContent .markdownContainer strong,
+.blockThemeCorangeLinkContent .markdownContainer p {
+  font-weight: normal;
+  color: var(--cg-1);
+  padding-bottom: 40px;
+}
+
+.blockThemeCorangeLinkContent .markdownContainer,
+.blockThemeAllWhiteLinkContent .markdownContainer {
+  padding-right: 10px;
+}
+
+/* If link block theme contains an visual element, it's just a small image
+underneath text content. Make sure it's in the middle of container*/
+.blockThemeAllWhiteLinkContent .linkContentImageContainer,
+.blockThemeCorangeLinkContent .linkContentImageContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.blockThemeAllWhiteLinkContent img,
+.blockThemeCorangeLinkContent img {
+  width: 208px;
+  height: 208px;
+  padding-top: 90px;
+}
+
+@media screen and (min-width: 700px) {
+  .card {
+    width: 100%;
+  }
+
+  .cardBody {
+    padding: 0 32px;
+  }
+
+  /* In these themes content should just flex in two columns, left containing text
+  contents and right containing image */
+  .blockThemeAllWhiteLinkContent > div,
+  .blockThemeCorangeLinkContent > div {
+    display: flex;
+    align-items: center;
+  }
+
+  /* All text content inside the block needs to grow in order to push the small
+  image tag as far of to the right it can */
+  .blockThemeCorangeLinkContent > div > div,
+  .blockThemeAllWhiteLinkContent > div > div {
+    max-width: 750px;
+    flex-grow: 1;
+  }
+
+  /* Make sure the small image align to the right inside it's container */
+  .blockThemeCorangeLinkContent img,
+  .blockThemeAllWhiteLinkContent img {
+    padding: 0;
+    margin-left: auto;
+  }
+
+  /* Except for blockThemeCorangeLinkContent all linkBlock themed "titles" should be bigger */
+  .blockThemeAllWhiteLinkContent .title,
+  .blockThemeAllWhiteLinkContent .markdownContainer p,
+  .blockThemeAllWhiteLinkContent .markdownContainer strong,
+  .blockThemeCorangeLinkContent .markdownContainer h2,
+  .blockThemeCorangeLinkContent .markdownContainer p,
+  .blockThemeCorangeLinkContent .markdownContainer strong {
+    font-size: 36px;
+    line-height: 1.28;
+    letter-spacing: -0.2px;
+  }
+
+  .blockThemeCorangeLinkContent .title {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .card {
+    flex: 1 0;
+  }
+
+  .card .cardImage {
+    height: 384px;
+  }
+}

@@ -1,0 +1,127 @@
+/* Padding-top is set in section through global styles to ensure the first
+article don't recieve it */
+.markdownContainer h1,
+.markdownContainer h2 {
+  padding-bottom: 32px;
+}
+
+.markdownContainer strong {
+  font-family: 'Termina';
+  font-weight: 500;
+  letter-spacing: normal;
+  display: block;
+}
+
+.markdownContainer strong,
+.markdownContainer strong {
+  padding-bottom: 30px;
+}
+
+/* Making sure there's a little gap between paragraps i markdown body */
+.markdownContainer p + p {
+  padding-top: 10px;
+}
+
+/* Making sure there's not a little gap between paragraps i compactArticles */
+.compactArticle p + p {
+  padding-top: 0px;
+}
+
+/* For images as well as links inside markdown */
+.markdownContainer p > a {
+  padding-top: 36px;
+  display: inline-block;
+}
+
+/* Images should add extra gap after them, not rule is for it would otherwise
+seperate line from text-link */
+.markdownContainer p > a:not(:global(.link-text)) {
+  padding-bottom: 30px;
+}
+
+.markdownContainer ol {
+  list-style: none;
+  counter-reset: custom-counter;
+  font-family: 'Muli';
+  font-size: 21px;
+  line-height: 1.33;
+  letter-spacing: -0.6px;
+  color: var(--cg-3);
+  break-inside: avoid;
+
+  padding-top: 22px;
+}
+
+.markdownContainer ol li {
+  counter-increment: custom-counter;
+  padding-bottom: 10px;
+  margin-left: 46px;
+}
+
+.markdownContainer ol li::before {
+  content: counter(custom-counter, decimal-leading-zero) '. ';
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 1.44;
+  letter-spacing: -0.4px;
+  color: var(--indigo-2);
+  width: 46px;
+  display: inline-block;
+  margin-left: -46px;
+}
+
+/* Used to copycat ol in special section on home page */
+.markdownContainer mark {
+  background-color: transparent;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.44;
+  letter-spacing: -0.4px;
+  color: var(--indigo-2);
+  width: 36px;
+  padding: 21px 0 11px 0;
+  display: block;
+}
+
+.compactArticle strong {
+  padding-top: 30px;
+  padding-bottom: 16px;
+}
+
+.compactArticle {
+  padding-bottom: 0;
+}
+
+@media screen and (min-width: 700px) {
+  /* So images in column-layout aren't misaligned, columns with images will have
+  a bit of extra padding underneath from same selector rule above */
+  .markdownContainer p > a {
+    padding-top: 0;
+  }
+
+  /* These two rules underneath prevent markdown content to jump around in column-layout */
+  .markdownContainer img {
+    position: static !important;
+  }
+
+  .markdownContainer span {
+    padding: 0 !important;
+  }
+
+  .compactArticle {
+    width: 284px;
+  }
+
+  .compactArticle h1 {
+    padding-top: 0;
+  }
+
+  .markdownContainer ol {
+    padding-top: 0;
+  }
+
+  /* For text-links added directly to markdown field, with .link-text global class, in Contentful */
+  .compactArticle :global(.link-text) {
+    padding-top: 20px;
+  }
+}
