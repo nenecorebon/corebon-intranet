@@ -1,0 +1,11 @@
+:root {
+  --navbar-height: 100px;
+  --page-padding: 32px;
+  --max-content-width: 1440px;
+}
+
+@media screen and (min-width: 1000px) {
+  :root {
+    --page-padding: 120px;
+  }
+}

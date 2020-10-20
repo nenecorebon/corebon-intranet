@@ -1,0 +1,31 @@
+:root {
+  --sand: #f5dcbe;
+  --cg-1: #18191a;
+  --corange: #ff9164;
+  --indigo-1: #14141e;
+  --indigo-2: #8da0b3;
+  --indigo-3: #d7dce1;
+  --cg-6: #b4b6b8;
+  --cg-2: #282a2c;
+  --cg-4: #646668;
+  --cg-3: #3c3e40;
+  --cg-7: #dcdee0;
+  --cg-5: #8c8e90;
+  --cg-8: #eef0f2;
+  --cg-9: #f8fafc;
+  --offblack: #131415;
+  --white: #ffffff;
+  --hot-purple-15: rgba(208, 0, 255, 0.15);
+}
+
+.color-indigo-2 {
+  color: var(--indigo-2);
+}
+
+.color-corange {
+  color: var(--corange);
+}
+
+.color-sand {
+  color: var(--sand);
+}

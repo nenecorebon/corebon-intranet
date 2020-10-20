@@ -1,0 +1,171 @@
+.titleImage {
+  width: 100%;
+  box-sizing: border-box;
+  max-height: 589px;
+  margin-top: var(--navbar-height);
+  background-color: var(--cg-9);
+  overflow: hidden;
+}
+
+.backButton {
+  font-family: 'Termina';
+  font-size: 14px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1.29;
+  letter-spacing: normal;
+  color: var(--cg-1);
+  display: block;
+  padding-bottom: 25px;
+}
+
+/* Need a container to set the background-color, so it goes all the way out to
+the edges of the screem */
+.pagePrefaceContainer {
+  background-color: var(--cg-9);
+}
+
+/* So here background-color has to be set again, together with a max-with and
+padding to keep the text contents of the preface in place that are the same on
+the rest of the page */
+.pagePreface {
+  max-width: var(--max-content-width);
+  margin: auto;
+
+  background-color: var(--cg-9);
+  padding-left: var(--page-padding);
+  padding-right: var(--page-padding);
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.pagePreface h1 {
+  padding-bottom: 32px;
+}
+
+.pagePreface > p:first-child {
+  padding-top: 100px;
+  padding-bottom: 30px;
+}
+
+.pagePreface div p:not(:last-child) {
+  padding-bottom: 20px;
+}
+
+.backButton + p {
+  padding-top: 0;
+  padding-bottom: 39px;
+}
+
+.pagePreface + p {
+  padding-top: 20px;
+}
+
+/* Target both container and content of preface */
+.pagePrefaceContainerThemeDark,
+.pageThemeDark {
+  background-color: var(--offblack);
+  background-image: url(../assets/images/visuals/texture/Noise-78px.png);
+}
+
+.pageThemeDark h1 {
+  color: var(--cg-9);
+  font-weight: 300;
+}
+
+.pageThemeDark p:not(:first-child) {
+  color: var(--cg-6);
+  font-weight: 300;
+}
+
+.pageThemeDark h1 + div p {
+  color: var(--cg-6);
+}
+
+/* Add extra padding to pagePreface if firstSection is to cut background */
+.firstSectionToCutBackground .pagePreface {
+  padding-bottom: 200px;
+}
+
+/* Move only the container with content upwards, (not the section, then the
+background would move with it) */
+.firstSectionToCutBackground + :global(.section .content-type-container) {
+  margin-top: -250px;
+}
+
+@media screen and (min-width: 700px) {
+  .pagePreface h1 {
+    padding-bottom: 100px;
+  }
+}
+
+@media screen and (min-width: 1060px) {
+  /* Target container of both image and preface */
+  .pageTitleImagePrefaceContainer {
+    max-width: var(--max-content-width);
+    margin: auto;
+    background-color: var(--cg-8);
+
+    display: grid;
+    grid-template-columns: auto;
+  }
+
+  /* The image */
+  .underlapPreface {
+    grid-row-end: 2;
+    grid-column-end: 2;
+    background-color: var(--cg-8);
+    margin-top: var(--navbar-height);
+    justify-self: end;
+  }
+
+  /* The preface */
+  .overlapTitleImage {
+    grid-row-end: 2;
+    grid-column-end: 2;
+
+    align-self: end;
+    max-width: 760px;
+    box-sizing: border-box;
+    padding-left: 33px;
+    padding-right: 43px;
+    margin: 0;
+    z-index: 1;
+  }
+
+  .overlapTitleImage h1 {
+    padding-bottom: 20px;
+  }
+
+  .overlapTitleImage p {
+    max-width: 588px;
+  }
+
+  .subheadingColumnLayout {
+    column-count: 2;
+    column-gap: 80px;
+    break-inside: avoid;
+    orphans: 3;
+    widows: 3;
+  }
+
+  .subheadingColumnLayout p {
+    padding-bottom: 20px;
+    break-inside: avoid;
+  }
+
+  .pageThemeDark h1 + div p {
+    color: var(--cg-6);
+    font-size: 24px;
+  }
+
+  /* Add additional padding to the extra padding, on really large desktops, that
+  is origainally added to the pagePreface if firstSection is to cut background*/
+  .firstSectionToCutBackground .pagePreface {
+    padding-bottom: 260px;
+  }
+
+  .firstSectionToCutBackground + :global(.section .content-type-container) {
+    margin-top: -250px;
+  }
+}

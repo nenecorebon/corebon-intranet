@@ -1,0 +1,47 @@
+.link-text {
+  padding: 0 0 6px;
+  cursor: pointer;
+  font-family: 'Termina';
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.33;
+  letter-spacing: normal;
+  color: var(--corange);
+  display: inline;
+  position: relative;
+  transition: opacity 1s;
+}
+
+.link-text-small {
+  font-size: 14px;
+}
+
+.link-text::after {
+  content: ' →';
+}
+
+.link-text::before {
+  content: '';
+  position: absolute;
+  margin: 0;
+  width: 60%;
+  padding-bottom: 6px;
+  bottom: 0;
+  left: 0;
+  border-bottom: 1px solid var(--corange);
+  transition: all 0.8s;
+}
+
+.link-text:active,
+.with-animated-sibling:hover ~ div > .link-text::before {
+  opacity: 0.6;
+}
+
+.link-text:hover::before,
+.link-text:focus::before,
+.with-animated-sibling:hover ~ div > .link-text::before,
+.with-animated-sibling:focus ~ div > .link-text::before,
+.with-animated-content:hover .link-text::before,
+.with-animated-content:focus .link-text::before {
+  width: 100%;
+}

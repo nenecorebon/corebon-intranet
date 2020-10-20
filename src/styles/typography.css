@@ -1,0 +1,143 @@
+@import './colors.css';
+
+@font-face {
+  font-family: 'Termina';
+  src: local(Termina-Regular),
+    url(../assets/fonts/Termina/Termina-Regular.otf) format('opentype');
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Termina';
+  src: local(Termina-Medium),
+    url(../assets/fonts/Termina/Termina-Medium.otf) format('opentype');
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Termina';
+  src: local(Termina-Light),
+    url(../assets/fonts/Termina/Termina-Light.otf) format('opentype');
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Muli';
+  src: local(Muli-Bold),
+    url(../assets/fonts/Muli/Muli-Bold.ttf) format('truetype');
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Muli';
+  src: local(Muli-Regular),
+    url(../assets/fonts/Muli/Muli-Regular.ttf) format('truetype');
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Muli';
+  src: local(Muli-Regular),
+    url(../assets/fonts/Muli/Muli-Light.ttf) format('truetype');
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+}
+
+.display0 {
+  font-family: 'Termina', sans-serif;
+  font-size: 72px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -6px;
+}
+
+.display1 {
+  font-family: 'Termina', sans-serif;
+  font-size: 36px;
+  line-height: 1.23;
+  letter-spacing: -0.6px;
+  color: var(--cg-1);
+}
+
+.display2 {
+  font-family: 'Termina', sans-serif;
+  font-size: 28px;
+  line-height: 1.24;
+  letter-spacing: -0.24px;
+  color: var(--cg-1);
+}
+
+.display3 {
+  font-family: 'Termina', sans-serif;
+  font-size: 24px;
+  line-height: 1.17;
+  letter-spacing: -0.13px;
+  color: var(--cg-1);
+}
+
+.display4 {
+  font-family: 'Termina', sans-serif;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: normal;
+  color: var(--cg-1);
+}
+
+.display-color-light {
+  color: var(--cg-9);
+}
+
+.body1 {
+  font-family: 'Muli', sans-serif;
+  font-size: 21px;
+  line-height: 1.33;
+  letter-spacing: -0.6px;
+  color: var(--cg-3);
+}
+
+.body2 {
+  font-family: 'Muli', sans-serif;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: -0.4px;
+  color: var(--cg-3);
+}
+
+.caption {
+  font-family: 'Muli', sans-serif;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: var(--cg-5);
+}
+
+.weight-medium {
+  font-weight: 500;
+}
+
+@media screen and (min-width: 600px) {
+  .display1 {
+    font-size: 60px;
+  }
+
+  .display2 {
+    font-size: 46px;
+  }
+
+  .display3 {
+    font-size: 36px;
+  }
+}
